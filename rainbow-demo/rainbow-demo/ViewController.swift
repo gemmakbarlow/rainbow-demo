@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var rainbow: UIImageView!
     private var buttonTapsCount: Int = 0
     
@@ -22,8 +23,11 @@ class ViewController: UIViewController {
     @IBAction func buttonWasTapped() {
         buttonTapsCount += 1
         
+        countLabel.text = "\(buttonTapsCount)"
+        
         if buttonTapsCount == 5 {
             rainbow.isHidden = false
+            countLabel.isHidden = true
         }
     }
 }
